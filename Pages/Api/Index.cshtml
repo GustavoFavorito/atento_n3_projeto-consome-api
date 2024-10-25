@@ -1,0 +1,18 @@
+﻿@page
+@model atento_n3_projeto_consome_api.Pages.Api.IndexModel
+@using Newtonsoft.Json
+
+<h1>api/GET</h1>
+
+@if (Model.Pessoas != null && Model.Pessoas.Count > 0)
+{
+    <script>
+        var pessoas = @Html.Raw(JsonConvert.SerializeObject(Model.Pessoas));
+    </script>
+
+    <pre>@Html.Raw(JsonConvert.SerializeObject(Model.Pessoas, Formatting.Indented))</pre>
+}
+else
+{
+    <p>No pessoas found.</p>
+}
